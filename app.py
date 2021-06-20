@@ -22,6 +22,10 @@ def update_profile(prof):
     conn.commit()
     conn.close()
 
+@app.route('/')
+def top():
+    return redirect(url_for('profile'))
+
 @app.route('/profile')
 def profile():
     prof_dict = get_profile()
